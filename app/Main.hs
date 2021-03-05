@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import MetaBuilder.Main
 
 main :: IO ()
 main = someFunc

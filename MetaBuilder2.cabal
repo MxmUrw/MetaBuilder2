@@ -7,11 +7,11 @@ cabal-version: 1.12
 name:           MetaBuilder2
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/MetaBuilder2#readme>
-homepage:       https://github.com/githubuser/MetaBuilder2#readme
-bug-reports:    https://github.com/githubuser/MetaBuilder2/issues
-author:         Author name here
+homepage:       https://github.com/MxmUrw/MetaBuilder2#readme
+bug-reports:    https://github.com/MxmUrw/MetaBuilder2/issues
+author:         Maxim Urschumzew
 maintainer:     example@example.com
-copyright:      2021 Author name here
+copyright:      2021 Maxim Urschumzew
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -21,17 +21,37 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/MetaBuilder2
+  location: https://github.com/MxmUrw/MetaBuilder2
 
 library
   exposed-modules:
-      Lib
+      MetaBuilder.Core
+      MetaBuilder.Core.GlobalConfig
+      MetaBuilder.Core.Notation
+      MetaBuilder.Core.ProjectType
+      MetaBuilder.Imports.IO
+      MetaBuilder.Imports.Shake
+      MetaBuilder.Imports.Yaml
+      MetaBuilder.Main
+      MetaBuilder.ProjectType.Haskell
+      MetaBuilder.ProjectType.Julia
   other-modules:
       Paths_MetaBuilder2
   hs-source-dirs:
       src
+  default-extensions: DuplicateRecordFields DeriveGeneric RankNTypes MultiParamTypeClasses FunctionalDependencies
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , directory
+    , executable-path
+    , filemanip
+    , parsec
+    , shake
+    , split
+    , text
+    , yaml
   default-language: Haskell2010
 
 executable MetaBuilder2-exe

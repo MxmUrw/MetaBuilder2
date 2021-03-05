@@ -24,6 +24,23 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+    - shake
+    - filemanip
+    - directory
+    - text
+    - yaml
+    - aeson
+    - executable-path
+    - attoparsec
+    - parsec
+    - split
+  default-extensions:
+    - DuplicateRecordFields
+    - DeriveGeneric
+    - RankNTypes
+    - MultiParamTypeClasses
+    - FunctionalDependencies
 
 executables:
   MetaBuilder2-exe:
